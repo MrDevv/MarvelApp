@@ -23,7 +23,6 @@ export const Search = () => {
   return (
     <form onSubmit={onSubmit} className='search'>
         <input type="text" onChange={onChange} value={characterValue} placeholder='Ingrese un nombre' />
-        {/* <Link type="submit" to={`/${characterValue}`}>Buscar</Link> */}
         <button type="submit">Buscar</button>
     </form>
   )
