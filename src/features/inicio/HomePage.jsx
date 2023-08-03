@@ -30,7 +30,7 @@ export const HomePage = () => {
     }    
   }, [])  
   
-  console.log(personajes);
+  // console.log(personajes);
 
   return (    
     <div className="container">

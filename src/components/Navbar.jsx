@@ -1,15 +1,7 @@
 import { NavLink, Link} from "react-router-dom";
+import { hideContainerLinks, showContainerLinks } from "../utils/helpers/toggleMenu";
 
 export const Navbar = () => {
-
-
-
-  const showContainerLinks = () => {
-    const toggleMenuElement = document.getElementById('toggle-menu');
-    const containerLinksElement = document.getElementById('container-links');
-
-    containerLinksElement.classList.toggle('container-links--show')
-  }
 
   return (
     <div className="container-navbar">
@@ -19,8 +11,10 @@ export const Navbar = () => {
       <div className="container-title">
         <Link className="title-navbar">MARVELAPP</Link>   
       </div>
+      <div onClick={hideContainerLinks} id="shadow-box"></div>
       <div id="container-links" className="container-links">
         <NavLink
+          onClick={hideContainerLinks}
           id="link_personajes"
           className={({ isActive }) => `link  ${isActive ? "active" : ""}`}
           to={"/"}
@@ -28,6 +22,7 @@ export const Navbar = () => {
           Personajes
         </NavLink>
         <NavLink
+          onClick={hideContainerLinks}
           id="link_comics"
           className={({ isActive }) => `link  ${isActive ? "active" : ""}`}
           to={"/series"}
