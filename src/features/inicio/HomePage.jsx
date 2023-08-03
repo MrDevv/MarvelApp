@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
+import { ItemPersonaje } from '../../components/ItemPersonaje';
 import { Search } from '../../components/Search';
 import { SpinnerLoading } from '../../components/SpinnerLoading';
 import { getHeroes } from '../../utils/helpers/getHeroes';
@@ -44,12 +45,7 @@ export const HomePage = () => {
             (<SpinnerLoading/>)
             :                       
               personajes.personajesLS.map(personaje => (
-                <div key={personaje.id} className="card-personaje">
-                     <div className="fondo">
-                       <img src={personaje.image} alt="spiderman" />
-                     </div>                
-                     <h1>{personaje.name}</h1>              
-                   </div>
+                <ItemPersonaje key={personaje.id} personaje={personaje}/>
               ))
             
           }

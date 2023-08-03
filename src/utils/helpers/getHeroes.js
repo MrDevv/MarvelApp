@@ -5,13 +5,14 @@ export const getHeroes = async() => {
 
     const {results} = await data.data;
 
-    const personajes = results.map(({id, name, thumbnail}) => {
+    const personajes = results.map(({id, name, thumbnail, comics}) => {
         const {path, extension} = thumbnail;
         
         return {
           id,
           name,
-          image: `${path}.${extension}`
+          image: `${path}.${extension}`,
+          comics: comics.returned
         }
     })
 

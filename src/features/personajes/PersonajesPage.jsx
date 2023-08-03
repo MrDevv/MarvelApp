@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import { ItemPersonaje } from '../../components/ItemPersonaje';
 import { Search } from '../../components/Search';
 import { SpinnerLoading } from '../../components/SpinnerLoading';
 import { getHeroesByName } from '../../utils/helpers/getHeroesByName';
@@ -42,12 +43,7 @@ export const PersonajesPage = () => {
                 <h1 className='center p-sin-resultados'>No hay resultados</h1>      
                 :
                 personajes.personajesLS.map(personaje => (
-                  <div key={personaje.id} className="card-personaje">
-                       <div className="fondo">
-                         <img src={personaje.image} alt="spiderman" />
-                       </div>                
-                       <h1>{personaje.name}</h1>              
-                     </div>
+                  <ItemPersonaje key={personaje.id} personaje={personaje}/>
                 ))
                 )
             }

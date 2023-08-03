@@ -12,7 +12,7 @@ export const getHeroesByName = async(character) => {
             id,
             name,
             image: `${path}.${extension}`,
-            series: comics.returned
+            comics: comics.returned
         }]
     }
     return [];
